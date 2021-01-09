@@ -236,12 +236,36 @@ namespace CSharpTestsSolutions
             Console.WriteLine("ans: " + newStr);
         }
 
+        public void SortIntegersASC()
+        {
+            // Ref: https://www.geeksforgeeks.org/bubble-sort/
+            int n = A.Length;
+            for (int i = 0; i < n - 1; i++)
+            {
+                for (int j = 0; j < n - i - 1; j++)
+                {
+                    if (A[j] > A[j + 1])
+                    {
+                        // swap temp and arr[i] 
+                        int temp = A[j];
+                        A[j] = A[j + 1];
+                        A[j + 1] = temp;
+                    }
+                }
+            }
+
+            foreach (var item in A)
+            {
+                Console.WriteLine(item);
+            }
+        }
+
         static void Main(string[] args)
         {
             Program program = new Program();
-            
+
             // Display first item in the Array
-            Console.WriteLine(program.A[0]);
+            //Console.WriteLine(program.A[0]);
 
             // Display all items in the Array
             //foreach (var item in program.A)
@@ -270,11 +294,15 @@ namespace CSharpTestsSolutions
 
             // #4
             // Find the next smallest integer from the Array
-            program.solution2();
+            //program.solution2();
 
             // #5
             // Write a method that reverses a String using only String API functions
             //program.ReverseString("Danjo");
+
+            // #6
+            // Sort an array of integers from least to greatest without any API functions
+            program.SortIntegersASC();
 
             Console.ReadKey(true);
         }
