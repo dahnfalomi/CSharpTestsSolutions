@@ -24,7 +24,7 @@ namespace CSharpTestsSolutions
         public int SmallestElement2(int[] A)
         {
             int min = 0;
-            // lalabs
+            // pam
             Console.WriteLine("Array Length: " + A.Length);
 
             for (int i = 0; i < A.Length; i++)
